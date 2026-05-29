@@ -18,6 +18,7 @@
         <module>discovery-server</module>
         <module>notification-service</module>
         <module>patient-service</module>
+        <module>auth-service</module>
     </modules>
 
 </project>

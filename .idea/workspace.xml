@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca966e73-68ba-4651-985e-74822a59d1cc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_requests/auth-service/login.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/auth-service/login.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +154,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.api-gateway">
+  <component name="RunManager" selected="Docker.auth-service-db">
     <configuration name="create-appointment | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/patient-service/create-appointment.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -579,8 +585,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.validate | GET request to validate token" />
         <item itemvalue="HTTP Request.login | Login request" />
+        <item itemvalue="HTTP Request.validate | GET request to validate token" />
         <item itemvalue="HTTP Request.create-appointment | #1" />
         <item itemvalue="HTTP Request.create-patient | create a new patient" />
         <item itemvalue="HTTP Request.get-patient | #1" />
