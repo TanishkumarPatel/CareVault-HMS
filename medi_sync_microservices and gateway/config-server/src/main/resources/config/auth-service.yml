@@ -1,0 +1,24 @@
+server:
+  port: 4005
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:postgresql://auth-service-db:5432/db
+    username: admin_user
+    password: password
+    hikari:
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      validation-timeout: 5000
+      test-on-borrow: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: always
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000

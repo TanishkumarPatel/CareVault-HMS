@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca966e73-68ba-4651-985e-74822a59d1cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-05-25T193141.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-05-25T193243.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-05-27T193221.200.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_requests/auth-service/login.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/auth-service/login.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_requests/auth-service/validate.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/auth-service/validate.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_requests/patient-service/get-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/patient-service/get-patient.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/test/java/com/example/apigateway/ApiGatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +31,8 @@
         <option value="Interface" />
         <option value="package-info" />
         <option value="Dockerfile" />
-        <option value="Class" />
         <option value="HTTP Request" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -146,6 +151,7 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
+              <entry key="get-patient | #1" value="STOPPED" />
               <entry key="login | Login request" value="STOPPED" />
               <entry key="validate | GET request to validate token" value="STOPPED" />
             </map>
@@ -154,7 +160,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.auth-service-db">
+  <component name="RunManager" selected="Docker.api-gateway">
     <configuration name="create-appointment | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/patient-service/create-appointment.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -331,42 +337,6 @@
         <settings>
           <option name="imageTag" value="auth-service:latest" />
           <option name="containerName" value="auth-service" />
-          <option name="envVars">
-            <list>
-              <DockerEnvVarImpl>
-                <option name="name" value="JWT_SECRET" />
-                <option name="value" value="404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970" />
-              </DockerEnvVarImpl>
-              <DockerEnvVarImpl>
-                <option name="name" value="SPRING_DATASOURCE_PASSWORD" />
-                <option name="value" value="password" />
-              </DockerEnvVarImpl>
-              <DockerEnvVarImpl>
-                <option name="name" value="SPRING_DATASOURCE_URL" />
-                <option name="value" value="jdbc:postgresql://auth-service-db:5432/db" />
-              </DockerEnvVarImpl>
-              <DockerEnvVarImpl>
-                <option name="name" value="SPRING_DATASOURCE_USERNAME" />
-                <option name="value" value="admin_user" />
-              </DockerEnvVarImpl>
-              <DockerEnvVarImpl>
-                <option name="name" value="SPRING_JPA_HIBERNATE_DDL_AUTO" />
-                <option name="value" value="update" />
-              </DockerEnvVarImpl>
-              <DockerEnvVarImpl>
-                <option name="name" value="SPRING_SQL_INIT_MODE" />
-                <option name="value" value="always" />
-              </DockerEnvVarImpl>
-            </list>
-          </option>
-          <option name="portBindings">
-            <list>
-              <DockerPortBindingImpl>
-                <option name="containerPort" value="4005" />
-                <option name="hostPort" value="4005" />
-              </DockerPortBindingImpl>
-            </list>
-          </option>
           <option name="commandLineOptions" value="--network internal" />
           <option name="sourceFilePath" value="medi_sync_microservices and gateway/auth-service/Dockerfile" />
         </settings>
@@ -387,7 +357,7 @@
             </list>
           </option>
           <option name="commandLineOptions" value="--network internal" />
-          <option name="sourceFilePath" value="medi_sync_microservices and gateway/discovery-server/Dockerfile" />
+          <option name="sourceFilePath" value="medi_sync_microservices and gateway/config-server/Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
@@ -585,11 +555,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.login | Login request" />
+        <item itemvalue="HTTP Request.get-patient | #1" />
         <item itemvalue="HTTP Request.validate | GET request to validate token" />
+        <item itemvalue="HTTP Request.login | Login request" />
         <item itemvalue="HTTP Request.create-appointment | #1" />
         <item itemvalue="HTTP Request.create-patient | create a new patient" />
-        <item itemvalue="HTTP Request.get-patient | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -660,6 +630,7 @@
       <workItem from="1776971546645" duration="41000" />
       <workItem from="1778914460615" duration="23070000" />
       <workItem from="1779387805576" duration="33596000" />
+      <workItem from="1780052902910" duration="18421000" />
     </task>
     <servers />
   </component>

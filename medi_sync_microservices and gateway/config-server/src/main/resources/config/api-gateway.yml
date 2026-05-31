@@ -1,4 +1,4 @@
- server:
+server:
   port: 4004
 
 spring:
@@ -21,6 +21,7 @@ spring:
             - Path=/api/patients/**
           filters:
             - StripPrefix=1
+            - JwtValidation
 
         - id: appointment-service-route
           uri: lb://APPOINTMENT-SERVICE
@@ -28,6 +29,7 @@ spring:
             - Path=/api/appointments/**
           filters:
             - StripPrefix=1
+            - JwtValidation
 
         - id: analytics-service-route
           uri: lb://ANALYTICS-SERVICE
@@ -35,6 +37,10 @@ spring:
             - Path=/api/analytics/**
           filters:
             - StripPrefix=1
+            - JwtValidation
+auth:
+  service:
+    url: http://auth-service:4005
 
 eureka:
   client:
