@@ -13,6 +13,34 @@ public class appointmentRequest {
 
     @NotNull(message = "Appointment time is required")
     private String appointmentTime;
+    private String department;
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    private String triageId;
+    private String slotId;
+
+    public String getTriageId() {
+        return triageId;
+    }
+
+    public void setTriageId(String triageId) {
+        this.triageId = triageId;
+    }
+
+    public String getSlotId() {
+        return slotId;
+    }
+
+    public void setSlotId(String slotId) {
+        this.slotId = slotId;
+    }
 
     public String getPatientId() {
         return patientId;

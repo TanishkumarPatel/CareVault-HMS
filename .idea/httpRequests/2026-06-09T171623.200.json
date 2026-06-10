@@ -1,0 +1,17 @@
+[
+  {
+    "id": "7805cecd-c27e-438f-a299-55589e28d669",
+    "patientId": "4e97e879-3c4d-4184-b996-e5c90390a06f",
+    "doctorName": "Dr. Sharma",
+    "appointmentTime": "2025-09-02T10:00",
+    "department": "Cardiology",
+    "status": "PENDING_REVIEW",
+    "triageId": "767fb678-c453-4392-8e41-b8fe4deb187d",
+    "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath",
+    "reason": "These symptoms are classic indicators of a potential acute cardiac event, such as a heart attack, which requires immediate medical evaluation and intervention.",
+    "urgencyLevel": "HIGH",
+    "rejectionReason": null,
+    "recommendedDepartment": null,
+    "recommendedDoctor": null
+  }
+]

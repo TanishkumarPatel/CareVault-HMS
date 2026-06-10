@@ -14,11 +14,13 @@
         <module name="api-gateway" />
         <module name="patient-service" />
         <module name="notification-service" />
+        <module name="ai-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ai-service" options="-parameters" />
       <module name="analytics-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="appointment-service" options="-parameters" />

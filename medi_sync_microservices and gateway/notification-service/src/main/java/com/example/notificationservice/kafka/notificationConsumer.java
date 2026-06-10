@@ -18,11 +18,29 @@ public class notificationConsumer {
     @KafkaListener(topics="appointment",groupId = "notification-service")
     public void consume(byte[] message){
         try {
-             AppointmentEvent event = AppointmentEvent.parseFrom(message);
-            String text = "Your appointment with Dr. " + event.getDoctorName() +
-                    " at " + event.getAppointmentTime() + " is confirmed.";
+            AppointmentEvent event = AppointmentEvent.parseFrom(message);
+            String patientEmail = event.getPatientEmail();
 
-            emailSender.sendEmail(event.getPatientId(), text);
+            if (patientEmail == null || patientEmail.isEmpty()) {
+                log.warn("No patient email in event for appointment: {}", event.getAppointmentId());
+                return;
+            }
+
+            String text;
+            if ("REJECTED".equals(event.getEventType())) {
+                text = "Your appointment has been reviewed by our staff.\n\n" +
+                        "Unfortunately your booking was not confirmed.\n" +
+                        "Recommended Department: " + event.getDepartment() + "\n" +
+                        "Recommended Doctor: " + event.getDoctorName() + "\n\n" +
+                        "Please rebook using the above details.";
+            } else {
+                text = "Your appointment is confirmed!\n\n" +
+                        "Doctor:" + event.getDoctorName() + "\n" +
+                        "Department: " + event.getDepartment() + "\n" +
+                        "Time: " + event.getAppointmentTime();
+            }
+
+            emailSender.sendEmail(patientEmail, text);
         }
         catch (InvalidProtocolBufferException e)
         {

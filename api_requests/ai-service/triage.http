@@ -1,0 +1,8 @@
+POST http://localhost:4004/api/ai/triage/analyze
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "patientId": "4e97e879-3c4d-4184-b996-e5c90390a06f",
+  "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath"
+}

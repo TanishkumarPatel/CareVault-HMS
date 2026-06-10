@@ -1,0 +1,16 @@
+[
+  {
+    "slotId": "a5000000-0000-0000-0000-000000000001",
+    "doctorName": "Dr. Singh",
+    "department": "ENT",
+    "slotTime": "2025-09-01T13:00",
+    "status": "AVAILABLE"
+  },
+  {
+    "slotId": "a5000000-0000-0000-0000-000000000002",
+    "doctorName": "Dr. Singh",
+    "department": "ENT",
+    "slotTime": "2025-09-03T09:00",
+    "status": "AVAILABLE"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "id": "33e35d94-3445-481b-a8a1-846c71960623",
+  "patientId": "adc8ceb6-a43d-41a5-814c-17aab5555952",
+  "doctorName": "Dr. Singh",
+  "appointmentTime": "2025-09-01T13:00",
+  "department": "ENT",
+  "status": "PENDING_REVIEW",
+  "triageId": "",
+  "symptoms": null,
+  "reason": null,
+  "urgencyLevel": null,
+  "rejectionReason": null,
+  "recommendedDepartment": null,
+  "recommendedDoctor": null
+}

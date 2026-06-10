@@ -38,6 +38,15 @@ spring:
           filters:
             - StripPrefix=1
             - JwtValidation
+
+        - id: ai-service-route
+          uri: lb://AI-SERVICE
+          predicates:
+            - Path=/api/ai/**
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+
 auth:
   service:
     url: http://auth-service:4005

@@ -1,0 +1,2 @@
+PUT http://localhost:4004/api/appointments/33e35d94-3445-481b-a8a1-846c71960623/approve
+Authorization: Bearer {{token}}

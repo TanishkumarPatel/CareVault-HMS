@@ -8,4 +8,7 @@ message AppointmentEvent {
   string PatientId = 2;
   string DoctorName = 3;
   string AppointmentTime = 4;
+  string PatientEmail = 5;
+  string Department = 6;
+  string EventType = 7;
 }

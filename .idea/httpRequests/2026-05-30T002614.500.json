@@ -1,7 +1,0 @@
-{
-  "timestamp": "2026-05-29T18:56:14.848+00:00",
-  "path": "/api/patients",
-  "status": 500,
-  "error": "Internal Server Error",
-  "requestId": "2f5834c8-11"
-}

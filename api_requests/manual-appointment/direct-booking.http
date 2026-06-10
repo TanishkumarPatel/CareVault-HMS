@@ -1,0 +1,12 @@
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "patientId": "adc8ceb6-a43d-41a5-814c-17aab5555952",
+  "doctorName": "Dr. Khan",
+  "appointmentTime": "2025-09-01T08:30",
+  "department": "General Medicine",
+  "slotId": "a4000000-0000-0000-0000-000000000001",
+  "triageId": ""
+}

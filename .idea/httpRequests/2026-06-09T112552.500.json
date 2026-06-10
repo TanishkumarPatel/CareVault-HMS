@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-06-09T05:55:52.615+00:00",
+  "path": "/api/appointments",
+  "status": 500,
+  "error": "Internal Server Error",
+  "requestId": "7bd9e5be-1"
+}

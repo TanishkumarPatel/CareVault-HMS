@@ -1,0 +1,38 @@
+[
+  {
+    "id": "7f6ca95e-8231-45aa-a8ff-29f4750690f7",
+    "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+    "doctorName": "Dr. Mehta",
+    "appointmentTime": "2025-09-01T09:00",
+    "department": "Cardiology",
+    "status": "PENDING_REVIEW",
+    "triageId": null,
+    "symptoms": null,
+    "reason": null,
+    "urgencyLevel": null
+  },
+  {
+    "id": "c76c2a2b-709d-4822-961c-b9fb8bb36a0a",
+    "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+    "doctorName": "Dr. Mehta",
+    "appointmentTime": "2025-09-01T11:00",
+    "department": "Cardiology",
+    "status": "PENDING_REVIEW",
+    "triageId": null,
+    "symptoms": null,
+    "reason": null,
+    "urgencyLevel": null
+  },
+  {
+    "id": "3c391809-9d49-46c1-9aca-70cb5773be3f",
+    "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+    "doctorName": "Dr. Sharma",
+    "appointmentTime": "2025-09-02T10:00",
+    "department": "Cardiology",
+    "status": "PENDING_REVIEW",
+    "triageId": "4e38a1e7-08bc-4381-8f91-c11ebc30b6f2",
+    "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath",
+    "reason": "These symptoms are highly indicative of an acute cardiac event like a heart attack, requiring immediate assessment and intervention.",
+    "urgencyLevel": "HIGH"
+  }
+]

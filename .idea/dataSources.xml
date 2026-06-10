@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="services-db" uuid="7feac735-3c42-4f54-9618-ef6449de448f">
+    <data-source source="LOCAL" name="services-db" uuid="8307f99c-1449-4fa4-8ff1-ac73c470ace1">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -13,7 +13,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="auth-service-db" uuid="23ffa5a8-d54e-408e-b7c0-80422c5a0c24">
+    <data-source source="LOCAL" name="auth-db" uuid="fe31e994-404f-405f-88fb-d833381d4baf">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

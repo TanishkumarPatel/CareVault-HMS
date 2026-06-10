@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/medi_sync_microservices and gateway/discovery-server/pom.xml" />
         <option value="$PROJECT_DIR$/medi_sync_microservices and gateway/pom.xml" />
         <option value="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/pom.xml" />
       </list>
     </option>
   </component>

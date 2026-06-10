@@ -1,0 +1,15 @@
+{
+  "id": "cc6b2c2f-8b53-42cb-a41b-d37fa58c27df",
+  "patientId": "adc8ceb6-a43d-41a5-814c-17aab5555952",
+  "doctorName": "Dr. Khan",
+  "appointmentTime": "2025-09-01T08:30",
+  "department": "General Medicine",
+  "status": "APPROVED",
+  "triageId": null,
+  "symptoms": null,
+  "reason": null,
+  "urgencyLevel": null,
+  "rejectionReason": null,
+  "recommendedDepartment": null,
+  "recommendedDoctor": null
+}

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-06-10T18:03:59.667+00:00",
+  "path": "/api/auth/login",
+  "status": 503,
+  "error": "Service Unavailable",
+  "requestId": "915c749b-1"
+}

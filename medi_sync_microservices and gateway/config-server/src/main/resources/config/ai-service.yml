@@ -1,0 +1,26 @@
+server:
+  port: 4006
+
+spring:
+  application:
+    name: ai-service
+  datasource:
+    url: jdbc:postgresql://services-db:5432/db
+    username: admin_user
+    password: password
+    hikari:
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      validation-timeout: 5000
+      test-on-borrow: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: always
+
+gemini:
+  api:
+    key: <you-api-key>
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent

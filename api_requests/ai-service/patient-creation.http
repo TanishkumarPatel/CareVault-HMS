@@ -1,0 +1,11 @@
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Rohan Mehta",
+  "email": "rohan.mehta@example.com",
+  "address": "12 Alkapuri, Vadodara",
+  "dateOfBirth": "1995-06-15",
+  "registeredDate": "2026-06-09"
+}

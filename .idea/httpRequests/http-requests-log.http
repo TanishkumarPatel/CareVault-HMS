@@ -1,23 +1,83 @@
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDE3MjI5NSwiZXhwIjoxNzgwMjA4Mjk1fQ.oVQYxTvdRJJJCIq9ZzKbqgwF9hateDU1UTpReEq4sc2oxpN9QUd4LXfvl4RWG5m3
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTExNzE0NSwiZXhwIjoxNzgxMTUzMTQ1fQ.J4zx6jCGtFa6RbZpE8Os_YZ72QjHcWcFRlXCEyVxr5pztxh6AObHdyt8m8AzIoFo
+Content-Length: 232
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
-<> 2026-05-31T014914.200.json
+{
+  "patientId": "adc8ceb6-a43d-41a5-814c-17aab5555952",
+  "doctorName": "Dr. Khan",
+  "appointmentTime": "2025-09-01T08:30",
+  "department": "General Medicine",
+  "slotId": "a4000000-0000-0000-0000-000000000001",
+  "triageId": ""
+}
+
+<> 2026-06-11T001944.200.json
 
 ###
 
-GET http://localhost:4004/api/patients
-Authorization: Bearer 2342342345dgfbb
+GET http://localhost:4004/api/appointments/slots?department=General Medicine
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTExNzE0NSwiZXhwIjoxNzgxMTUzMTQ1fQ.J4zx6jCGtFa6RbZpE8Os_YZ72QjHcWcFRlXCEyVxr5pztxh6AObHdyt8m8AzIoFo
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+
+<> 2026-06-11T001610.200.json
+
+###
+
+POST http://localhost:4004/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2026-06-11T001545.200.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTExNDY3MCwiZXhwIjoxNzgxMTUwNjcwfQ.2D6HElPsgaw_lJ6mzkDI4VfCcSQVaV1myyygVjXrrGfjzxLkUw-qdxid7NIBV-6d
+Content-Length: 220
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "adc8ceb6-a43d-41a5-814c-17aab5555952",
+  "doctorName": "Dr. Singh",
+  "appointmentTime": "2025-09-03T09:00",
+  "department": "ENT",
+  "slotId": "a5000000-0000-0000-0000-000000000002",
+  "triageId": ""
+}
+
+<> 2026-06-10T233549.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/slots?department=ENT
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTExNDY3MCwiZXhwIjoxNzgxMTUwNjcwfQ.2D6HElPsgaw_lJ6mzkDI4VfCcSQVaV1myyygVjXrrGfjzxLkUw-qdxid7NIBV-6d
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-10T233454.200.json
 
 ###
 
 GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDE3MjI5NSwiZXhwIjoxNzgwMjA4Mjk1fQ.oVQYxTvdRJJJCIq9ZzKbqgwF9hateDU1UTpReEq4sc2oxpN9QUd4LXfvl4RWG5m3
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTExNDY3MCwiZXhwIjoxNzgxMTUwNjcwfQ.2D6HElPsgaw_lJ6mzkDI4VfCcSQVaV1myyygVjXrrGfjzxLkUw-qdxid7NIBV-6d
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
@@ -36,29 +96,100 @@ Accept: */*
   "password": "password123"
 }
 
-<> 2026-05-31T014815.200.json
+<> 2026-06-10T233430.200.json
 
 ###
 
-GET http://localhost:4004/api/patients
-Authorization: Bearer 23423423342gsudg
+POST http://localhost:4004/api/auth/login
+Content-Type: application/json
+Content-Length: 63
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
-<> 2026-05-31T011442.500.json
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2026-06-10T233359.503.json
 
 ###
 
-GET http://localhost:4004/api/patients
+PUT http://localhost:4004/api/appointments/33e35d94-3445-481b-a8a1-846c71960623/approve
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTA4NzUwNSwiZXhwIjoxNzgxMTIzNTA1fQ.nqrLoYinGmWTUNgdsMmnQ8sw5l22iNvWVNALHndw8TBvgI5lN2Dn7obL1D5v3NR1
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+content-length: 0
+
+<> 2026-06-10T161731.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTA4NzUwNSwiZXhwIjoxNzgxMTIzNTA1fQ.nqrLoYinGmWTUNgdsMmnQ8sw5l22iNvWVNALHndw8TBvgI5lN2Dn7obL1D5v3NR1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-10T161711.200.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTA4NzUwNSwiZXhwIjoxNzgxMTIzNTA1fQ.nqrLoYinGmWTUNgdsMmnQ8sw5l22iNvWVNALHndw8TBvgI5lN2Dn7obL1D5v3NR1
+Content-Length: 220
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "adc8ceb6-a43d-41a5-814c-17aab5555952",
+  "doctorName": "Dr. Singh",
+  "appointmentTime": "2025-09-01T13:00",
+  "department": "ENT",
+  "slotId": "a5000000-0000-0000-0000-000000000001",
+  "triageId": ""
+}
+
+<> 2026-06-10T160918.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTA4NzUwNSwiZXhwIjoxNzgxMTIzNTA1fQ.nqrLoYinGmWTUNgdsMmnQ8sw5l22iNvWVNALHndw8TBvgI5lN2Dn7obL1D5v3NR1
+Content-Length: 168
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Rohan Mehta",
+  "email": "tapatel162005@gmail.com",
+  "address": "12 Alkapuri, Vadodara",
+  "dateOfBirth": "1995-06-15",
+  "registeredDate": "2026-06-10"
+}
+
+<> 2026-06-10T160647.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/slots?department=ENT
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTA4NzUwNSwiZXhwIjoxNzgxMTIzNTA1fQ.nqrLoYinGmWTUNgdsMmnQ8sw5l22iNvWVNALHndw8TBvgI5lN2Dn7obL1D5v3NR1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-10T160426.200.json
 
 ###
 
 GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDE2OTIxOCwiZXhwIjoxNzgwMjA1MjE4fQ.etrpION_dbLAEq_CuZkNR8nZgopOoVvxHW9LuJEpPr4mmuUwpxOk8p0IU238d-ng
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTA4NzUwNSwiZXhwIjoxNzgxMTIzNTA1fQ.nqrLoYinGmWTUNgdsMmnQ8sw5l22iNvWVNALHndw8TBvgI5lN2Dn7obL1D5v3NR1
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
@@ -77,562 +208,506 @@ Accept: */*
   "password": "password123"
 }
 
-<> 2026-05-31T005658.200.json
+<> 2026-06-10T160145.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T172530.200.json
+
+###
+
+PUT http://localhost:4004/api/appointments/7805cecd-c27e-438f-a299-55589e28d669/approve
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-06-09T172448.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T171623.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T171512.200.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+Content-Length: 234
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "4e97e879-3c4d-4184-b996-e5c90390a06f",
+  "slotId": "a1000000-0000-0000-0000-000000000003",
+  "triageId": "767fb678-c453-4392-8e41-b8fe4deb187d",
+  "doctorName": "Dr. Sharma",
+  "appointmentTime": "2025-09-02T10:00"
+}
+
+<> 2026-06-09T171402.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/slots?department=Cardiology
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T171247.200.json
+
+###
+
+POST http://localhost:4004/api/ai/triage/analyze
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+Content-Length: 150
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "4e97e879-3c4d-4184-b996-e5c90390a06f",
+  "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath"
+}
+
+<> 2026-06-09T171205.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
+Content-Length: 168
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Rohan Mehta",
+  "email": "rohan.mehta@example.com",
+  "address": "12 Alkapuri, Vadodara",
+  "dateOfBirth": "1995-06-15",
+  "registeredDate": "2026-06-09"
+}
+
+<> 2026-06-09T170922.200.json
 
 ###
 
 GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MTk5MiwiZXhwIjoxNzgwMTE3OTkyfQ.Th6vBl9LlS1qWB-t8Ek7zBfrCwWXj8Dils8-_YEYLc6pJoGTrMlHnxt4kBVKUfUm
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwNTE0NSwiZXhwIjoxNzgxMDQxMTQ1fQ.40FqIGwavxCVFF4C4XMnA-wE4zNHYhAIEm5AYGepcFH50pkQ9MizI2QKf5H2fgfC
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
+
+###
+
+POST http://localhost:4004/api/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2026-06-09T170905.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwMjg2OSwiZXhwIjoxNzgxMDM4ODY5fQ.k9HdmK9CONzVJu5TOyyfX22gOiuAMZ9N0z6OizZquj3P-9eN6M-o5SqzKdWxh09G
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T170320.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwMjg2OSwiZXhwIjoxNzgxMDM4ODY5fQ.k9HdmK9CONzVJu5TOyyfX22gOiuAMZ9N0z6OizZquj3P-9eN6M-o5SqzKdWxh09G
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T163701.200.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwMjg2OSwiZXhwIjoxNzgxMDM4ODY5fQ.k9HdmK9CONzVJu5TOyyfX22gOiuAMZ9N0z6OizZquj3P-9eN6M-o5SqzKdWxh09G
+Content-Length: 234
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000003",
+  "triageId": "4e38a1e7-08bc-4381-8f91-c11ebc30b6f2",
+  "doctorName": "Dr. Sharma",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T163523.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/slots?department=Cardiology
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwMjg2OSwiZXhwIjoxNzgxMDM4ODY5fQ.k9HdmK9CONzVJu5TOyyfX22gOiuAMZ9N0z6OizZquj3P-9eN6M-o5SqzKdWxh09G
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T163442.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/slots?department=Cardiology
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwMjg2OSwiZXhwIjoxNzgxMDM4ODY5fQ.k9HdmK9CONzVJu5TOyyfX22gOiuAMZ9N0z6OizZquj3P-9eN6M-o5SqzKdWxh09G
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T163215.200.json
+
+###
+
+POST http://localhost:4004/api/ai/triage/analyze
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwMjg2OSwiZXhwIjoxNzgxMDM4ODY5fQ.k9HdmK9CONzVJu5TOyyfX22gOiuAMZ9N0z6OizZquj3P-9eN6M-o5SqzKdWxh09G
+Content-Length: 150
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath"
+}
+
+<> 2026-06-09T163157.200.json
 
 ###
 
 GET http://localhost:4004/api/auth/validate
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MTAwMjg2OSwiZXhwIjoxNzgxMDM4ODY5fQ.k9HdmK9CONzVJu5TOyyfX22gOiuAMZ9N0z6OizZquj3P-9eN6M-o5SqzKdWxh09G
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
-
-<> 2026-05-31T005637.400.json
 
 ###
 
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MTk5MiwiZXhwIjoxNzgwMTE3OTkyfQ.Th6vBl9LlS1qWB-t8Ek7zBfrCwWXj8Dils8-_YEYLc6pJoGTrMlHnxt4kBVKUfUm
+POST http://localhost:4004/api/auth/login
+Content-Type: application/json
+Content-Length: 63
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
-<> 2026-05-30T004324.200.json
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2026-06-09T163109.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T121654.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T121004.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/pending
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T115745.200.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000002",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T115625.200.json
+
+###
+
+GET http://localhost:4004/api/appointments/slots?department=Cardiology
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T113021.200.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T112928.500.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T112630.200.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T112552.500.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T112048.400.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T111912.400.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T111844.400.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T110944.400.json
+
+###
+
+POST http://localhost:4004/api/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 179
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "slotId": "a1000000-0000-0000-0000-000000000001",
+  "doctorName": "Dr. Mehta",
+  "appointmentTime": "2025-09-01T09:00"
+}
+
+<> 2026-06-09T110903.400.json
+
+###
+
+GET http://localhost:4004/api/appointments/slots?department=Cardiology
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-09T110732.200.json
+
+###
+
+POST http://localhost:4004/api/ai/triage/analyze
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 150
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath"
+}
+
+<> 2026-06-09T110701.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
+Content-Length: 168
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "Rohan Mehta",
+  "email": "rohan.mehta@example.com",
+  "address": "12 Alkapuri, Vadodara",
+  "dateOfBirth": "1995-06-15",
+  "registeredDate": "2026-06-09"
+}
+
+<> 2026-06-09T110542.200.json
 
 ###
 
 GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MTk5MiwiZXhwIjoxNzgwMTE3OTkyfQ.Th6vBl9LlS1qWB-t8Ek7zBfrCwWXj8Dils8-_YEYLc6pJoGTrMlHnxt4kBVKUfUm
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDk4MzIyMiwiZXhwIjoxNzgxMDE5MjIyfQ.ojm5WtmU7rPFcJ205NDwnD7OKN5pjDjWeDRwb9jEp1DhruacH5hO4R1xmtlIwbxo
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-30T004312.200.json
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MTU4NywiZXhwIjoxNzgwMTE3NTg3fQ.5L0NEiEpDba7-FWLYdRVwBGbn1gdVbS-PvQsfYLnTMW-htfuz9BX2uCyMqA2sxZ7
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T003756.500.json
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MTU4NywiZXhwIjoxNzgwMTE3NTg3fQ.5L0NEiEpDba7-FWLYdRVwBGbn1gdVbS-PvQsfYLnTMW-htfuz9BX2uCyMqA2sxZ7
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T003634.500.json
-
-###
-
-GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MTU4NywiZXhwIjoxNzgwMTE3NTg3fQ.5L0NEiEpDba7-FWLYdRVwBGbn1gdVbS-PvQsfYLnTMW-htfuz9BX2uCyMqA2sxZ7
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-30T003627.200.json
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDgzNywiZXhwIjoxNzgwMTE2ODM3fQ.g3Y9Q2pFOXoWeQKW5nZGMG9VwuIjyv2O5YbjV_bRB6nfKNZt2gdkOIIf8AdoQ1Nr
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T002614.500.json
-
-###
-
-GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDgzNywiZXhwIjoxNzgwMTE2ODM3fQ.g3Y9Q2pFOXoWeQKW5nZGMG9VwuIjyv2O5YbjV_bRB6nfKNZt2gdkOIIf8AdoQ1Nr
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDgzNywiZXhwIjoxNzgwMTE2ODM3fQ.g3Y9Q2pFOXoWeQKW5nZGMG9VwuIjyv2O5YbjV_bRB6nfKNZt2gdkOIIf8AdoQ1Nr
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T002438.500.json
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDgzNywiZXhwIjoxNzgwMTE2ODM3fQ.g3Y9Q2pFOXoWeQKW5nZGMG9VwuIjyv2O5YbjV_bRB6nfKNZt2gdkOIIf8AdoQ1Nr
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T002415.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-30T002357.200.json
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDM3NCwiZXhwIjoxNzgwMTE2Mzc0fQ.LftpkgL0yQ0vVYqVdieptEJgddcHh7mgn4uKL2359Xmy48SZYPM5PD09BLUfEkY0
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T002347.500.json
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDM3NCwiZXhwIjoxNzgwMTE2Mzc0fQ.LftpkgL0yQ0vVYqVdieptEJgddcHh7mgn4uKL2359Xmy48SZYPM5PD09BLUfEkY0
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T001626.500.json
-
-###
-
-GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDM3NCwiZXhwIjoxNzgwMTE2Mzc0fQ.LftpkgL0yQ0vVYqVdieptEJgddcHh7mgn4uKL2359Xmy48SZYPM5PD09BLUfEkY0
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-30T001614.200.json
-
-###
-
-GET http://localhost:4004/api/patients
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDA4MDMwMSwiZXhwIjoxNzgwMTE2MzAxfQ.6oAOzvu0mZIgvlBV_novXAaCXeK5kjdUjDdYXFyvEN5RXNmdeLc8xj_0CusWgvQk
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-05-30T001553.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-30T001501.200.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T183842.200.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T183807.200.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T181159.200.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T180534.200.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T180254.503.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T180031.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T175901.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T175859.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T175854.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T175754.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T175715.200.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T170455.200.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T164015.503.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T162826.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T161618.503.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T161441.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T161406.500.json
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T161313.500.json
-
-###
-
-GET http://localhost:4004/api/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDAzNzUzNiwiZXhwIjoxNzgwMDczNTM2fQ.EphmEHQySlQwtmGrzEa349NW8T7D1Nnvt4YtDwTM9wYqUA7SNzPcjxUZzwl1D5Vr
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-POST http://localhost:4004/api/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-29T122216.200.json
-
-###
-
-GET http://localhost:4005/validate
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3OTkwMjk2OCwiZXhwIjoxNzc5OTM4OTY4fQ.MdQLW1SsBNA7kSG0MU5TM73mrqmeTuWHoFAs3etGmdTlz9oc6vPEKWqaxdpXkkPD
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-POST http://localhost:4005/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2026-05-27T225928.200.json
 
 ###
 

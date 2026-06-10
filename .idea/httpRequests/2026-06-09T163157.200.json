@@ -1,0 +1,9 @@
+{
+  "triageId": "4e38a1e7-08bc-4381-8f91-c11ebc30b6f2",
+  "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+  "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath",
+  "suggestedDepartment": "Cardiology",
+  "urgencyLevel": "HIGH",
+  "reason": "These symptoms are highly indicative of an acute cardiac event like a heart attack, requiring immediate assessment and intervention.",
+  "status": "PENDING_REVIEW"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "7f6ca95e-8231-45aa-a8ff-29f4750690f7",
+    "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+    "doctorName": "Dr. Mehta",
+    "appointmentTime": "2025-09-01T09:00",
+    "department": "Cardiology",
+    "status": "PENDING_REVIEW"
+  },
+  {
+    "id": "c76c2a2b-709d-4822-961c-b9fb8bb36a0a",
+    "patientId": "57454c18-77ce-41de-84a8-2c1b94f636ea",
+    "doctorName": "Dr. Mehta",
+    "appointmentTime": "2025-09-01T11:00",
+    "department": "Cardiology",
+    "status": "PENDING_REVIEW"
+  }
+]

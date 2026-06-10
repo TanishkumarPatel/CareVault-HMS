@@ -1,0 +1,23 @@
+[
+  {
+    "slotId": "a4000000-0000-0000-0000-000000000001",
+    "doctorName": "Dr. Khan",
+    "department": "General Medicine",
+    "slotTime": "2025-09-01T08:30",
+    "status": "AVAILABLE"
+  },
+  {
+    "slotId": "a4000000-0000-0000-0000-000000000002",
+    "doctorName": "Dr. Khan",
+    "department": "General Medicine",
+    "slotTime": "2025-09-01T12:00",
+    "status": "AVAILABLE"
+  },
+  {
+    "slotId": "a4000000-0000-0000-0000-000000000003",
+    "doctorName": "Dr. Verma",
+    "department": "General Medicine",
+    "slotTime": "2025-09-02T15:00",
+    "status": "AVAILABLE"
+  }
+]

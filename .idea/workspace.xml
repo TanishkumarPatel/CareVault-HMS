@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca966e73-68ba-4651-985e-74822a59d1cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-05-25T193141.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-05-25T193243.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-05-27T193221.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_requests/auth-service/login.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/auth-service/login.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_requests/auth-service/validate.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/auth-service/validate.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_requests/patient-service/get-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/patient-service/get-patient.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/test/java/com/example/apigateway/ApiGatewayApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/ai-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/ai-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +17,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Interface" />
         <option value="package-info" />
+        <option value="Interface" />
         <option value="Dockerfile" />
-        <option value="HTTP Request" />
         <option value="Class" />
+        <option value="HTTP Request" />
       </list>
     </option>
   </component>
@@ -54,74 +43,90 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Docker.analytics-service.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.api-gateway.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.appointment-service.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.auth-service-db.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.auth-service.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.config-server.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.discovery-server.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.kafka.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.notificaiton-service.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.patient-service-db.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.patient-service.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.patient_service.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.patietnt-service-db.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.services-db.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.create-appointment | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.create-appointment | GET request to example server.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.create-patient | GET request to example server.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.create-patient | create a new patient.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.delete-patient | delete.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.get-patient | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.login | Login request.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.update-patient | UPDATE.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.validate | GET request to validate token.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.analytics-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.analytics-service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.appointment-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.appointment-service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.auth-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.auth-service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.auth-service [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.notification-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.notification-service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.patient_service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.patient_service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.PatientServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tanish/Myproject/medi_sync/medi_sync_microservices and gateway/auth-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;bigdataide_conn_settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Docker.ai-service.executor": "Run",
+    "Docker.analytics-service.executor": "Run",
+    "Docker.api-gateway.executor": "Run",
+    "Docker.appointment-service.executor": "Run",
+    "Docker.auth-service-db.executor": "Run",
+    "Docker.auth-service.executor": "Run",
+    "Docker.config-server.executor": "Run",
+    "Docker.discovery-server.executor": "Run",
+    "Docker.kafka.executor": "Run",
+    "Docker.notificaiton-service.executor": "Run",
+    "Docker.patient-service-db.executor": "Run",
+    "Docker.patient-service.executor": "Run",
+    "Docker.patient_service.executor": "Run",
+    "Docker.patietnt-service-db.executor": "Run",
+    "Docker.services-db.executor": "Run",
+    "HTTP Request.approve | #1.executor": "Run",
+    "HTTP Request.booking | #1.executor": "Run",
+    "HTTP Request.create-appointment | #1.executor": "Run",
+    "HTTP Request.create-appointment | GET request to example server.executor": "Run",
+    "HTTP Request.create-patient | GET request to example server.executor": "Run",
+    "HTTP Request.create-patient | create a new patient.executor": "Run",
+    "HTTP Request.delete-patient | delete.executor": "Run",
+    "HTTP Request.direct-booking | #1.executor": "Run",
+    "HTTP Request.get-patient | #1.executor": "Run",
+    "HTTP Request.login | Login request.executor": "Run",
+    "HTTP Request.patient-creation | #1.executor": "Run",
+    "HTTP Request.patient_creation | #1.executor": "Run",
+    "HTTP Request.pending | #1.executor": "Run",
+    "HTTP Request.slots | #1.executor": "Run",
+    "HTTP Request.slots_available | #1.executor": "Run",
+    "HTTP Request.triage | #1.executor": "Run",
+    "HTTP Request.triage | Triage Analyze.executor": "Run",
+    "HTTP Request.update-patient | UPDATE.executor": "Run",
+    "HTTP Request.validate | GET request to validate token.executor": "Run",
+    "Maven.ai-service [clean].executor": "Run",
+    "Maven.ai-service [compile].executor": "Run",
+    "Maven.analytics-service [clean].executor": "Run",
+    "Maven.analytics-service [compile].executor": "Run",
+    "Maven.appointment-service [clean].executor": "Run",
+    "Maven.appointment-service [compile].executor": "Run",
+    "Maven.auth-service [clean].executor": "Run",
+    "Maven.auth-service [compile].executor": "Run",
+    "Maven.auth-service [test].executor": "Run",
+    "Maven.config-server [clean].executor": "Run",
+    "Maven.config-server [compile].executor": "Run",
+    "Maven.notification-service [clean].executor": "Run",
+    "Maven.notification-service [compile].executor": "Run",
+    "Maven.patient_service [clean].executor": "Run",
+    "Maven.patient_service [compile].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.PatientServiceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/tanish/Myproject/medi_sync/medi_sync_microservices and gateway/auth-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service" />
@@ -151,8 +156,10 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
-              <entry key="get-patient | #1" value="STOPPED" />
+              <entry key="approve | #1" value="STOPPED" />
+              <entry key="direct-booking | #1" value="STOPPED" />
               <entry key="login | Login request" value="STOPPED" />
+              <entry key="slots_available | #1" value="STOPPED" />
               <entry key="validate | GET request to validate token" value="STOPPED" />
             </map>
           </value>
@@ -161,20 +168,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Docker.api-gateway">
-    <configuration name="create-appointment | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/patient-service/create-appointment.http" executionIdentifier="#1" runType="Run single request">
+    <configuration name="approve | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/ai-service/approve.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="create-patient | create a new patient" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/patient-service/create-patient.http" executionIdentifier="create a new patient" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="get-patient | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/patient-service/get-patient.http" executionIdentifier="#1" runType="Run single request">
+    <configuration name="direct-booking | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/manual-appointment/direct-booking.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="login | Login request" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/auth-service/login.http" executionIdentifier="Login request" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="slots_available | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/manual-appointment/slots_available.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="validate | GET request to validate token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/auth-service/validate.http" executionIdentifier="GET request to validate token" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration name="AiServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="ai-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.aiservice.AiServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AnalyticsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="analytics-service" />
@@ -232,6 +247,25 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="ai-service" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="ai-service:latest" />
+          <option name="containerName" value="ai-service" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="4006" />
+                <option name="hostPort" value="4006" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="--network internal" />
+          <option name="sourceFilePath" value="medi_sync_microservices and gateway/ai-service/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
     </configuration>
     <configuration name="analytics-service" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
@@ -461,7 +495,7 @@
             </list>
           </option>
           <option name="commandLineOptions" value="--network internal" />
-          <option name="sourceFilePath" value="notification-service/Dockerfile" />
+          <option name="sourceFilePath" value="medi_sync_microservices and gateway/notification-service/Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
@@ -531,6 +565,7 @@
       <item itemvalue="Docker.notificaiton-service" />
       <item itemvalue="Docker.appointment-service" />
       <item itemvalue="Docker.api-gateway" />
+      <item itemvalue="Docker.ai-service" />
       <item itemvalue="Docker.patient-service" />
       <item itemvalue="Docker.analytics-service" />
       <item itemvalue="Docker.config-server" />
@@ -539,11 +574,12 @@
       <item itemvalue="Docker.services-db" />
       <item itemvalue="Docker.auth-service-db" />
       <item itemvalue="Docker.auth-service" />
+      <item itemvalue="HTTP Request.approve | #1" />
+      <item itemvalue="HTTP Request.direct-booking | #1" />
+      <item itemvalue="HTTP Request.slots_available | #1" />
       <item itemvalue="HTTP Request.login | Login request" />
       <item itemvalue="HTTP Request.validate | GET request to validate token" />
-      <item itemvalue="HTTP Request.create-appointment | #1" />
-      <item itemvalue="HTTP Request.create-patient | create a new patient" />
-      <item itemvalue="HTTP Request.get-patient | #1" />
+      <item itemvalue="Spring Boot.AiServiceApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.DiscoveryServerApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
@@ -555,11 +591,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.get-patient | #1" />
-        <item itemvalue="HTTP Request.validate | GET request to validate token" />
+        <item itemvalue="HTTP Request.direct-booking | #1" />
+        <item itemvalue="HTTP Request.slots_available | #1" />
         <item itemvalue="HTTP Request.login | Login request" />
-        <item itemvalue="HTTP Request.create-appointment | #1" />
-        <item itemvalue="HTTP Request.create-patient | create a new patient" />
+        <item itemvalue="HTTP Request.validate | GET request to validate token" />
+        <item itemvalue="HTTP Request.approve | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -630,7 +666,15 @@
       <workItem from="1776971546645" duration="41000" />
       <workItem from="1778914460615" duration="23070000" />
       <workItem from="1779387805576" duration="33596000" />
-      <workItem from="1780052902910" duration="18421000" />
+      <workItem from="1780052902910" duration="24372000" />
+      <workItem from="1780506215444" duration="8264000" />
+      <workItem from="1780593919231" duration="10824000" />
+      <workItem from="1780677469081" duration="5441000" />
+      <workItem from="1780830907063" duration="83000" />
+      <workItem from="1780831002822" duration="10608000" />
+      <workItem from="1780898840279" duration="37000" />
+      <workItem from="1780898887946" duration="10003000" />
+      <workItem from="1780982474850" duration="32644000" />
     </task>
     <servers />
   </component>
