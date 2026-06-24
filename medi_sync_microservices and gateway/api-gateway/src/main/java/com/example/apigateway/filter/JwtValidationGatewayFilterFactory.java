@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -25,7 +26,22 @@ public class JwtValidationGatewayFilterFactory extends AbstractGatewayFilterFact
                 exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
                 return exchange.getResponse().setComplete();
             }
-            return webClient.get().uri("/auth/validate").header(HttpHeaders.AUTHORIZATION,token).retrieve().toBodilessEntity().then(chain.filter(exchange));
+            return webClient.get()
+                    .uri("/auth/validate")
+                    .header(HttpHeaders.AUTHORIZATION, token)
+                    .retrieve()
+                    .toBodilessEntity()
+                    .flatMap(response -> {
+
+                        String role = response.getHeaders().getFirst("X-User-Role");
+
+                        ServerHttpRequest mutatedRequest = exchange.getRequest()
+                                .mutate()
+                                .header("X-User-Role", role != null ? role : "")
+                                .build();
+
+                        return chain.filter(exchange.mutate().request(mutatedRequest).build());
+                    });
         };
     }
 }

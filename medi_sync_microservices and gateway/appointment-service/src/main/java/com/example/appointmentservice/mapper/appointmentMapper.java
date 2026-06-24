@@ -25,6 +25,7 @@ public class appointmentMapper {
         response.setRejectionReason(appointment.getRejectionReason());
         response.setRecommendedDepartment(appointment.getRecommendedDepartment());
         response.setRecommendedDoctor(appointment.getRecommendedDoctor());
+        response.setUrgentCallDone(appointment.isUrgentCallDone());
         return response;
     }
 

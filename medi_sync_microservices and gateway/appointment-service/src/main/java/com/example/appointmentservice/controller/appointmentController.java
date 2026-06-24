@@ -36,6 +36,11 @@ public class appointmentController {
         return ResponseEntity.ok(service.getPendingAppointments());
     }
 
+    @PutMapping("/{id}/mark-called")
+    public ResponseEntity<appointmentResponse> markAppointmentCalled(@PathVariable UUID id) {
+        return ResponseEntity.ok(service.markUrgentCallDone(id));
+    }
+
     @PutMapping("/{id}/approve")
     public ResponseEntity<appointmentResponse> approveAppointment(@PathVariable UUID id) {
         return ResponseEntity.ok(service.approveAppointment(id));

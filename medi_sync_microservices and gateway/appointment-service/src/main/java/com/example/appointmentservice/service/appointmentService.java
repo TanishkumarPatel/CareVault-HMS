@@ -17,6 +17,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -58,6 +59,16 @@ public class appointmentService {
         return null;
     }
 
+    private int urgencyOrder(String urgencyLevel) {
+        if (urgencyLevel == null) return 99;
+        return switch (urgencyLevel.toUpperCase()) {
+            case "HIGH"   -> 1;
+            case "MEDIUM" -> 2;
+            case "LOW"    -> 3;
+            default       -> 99;
+        };
+    }
+
     public appointmentResponse bookAppointment(appointmentRequest request) {
         String url = "http://patient-service/patients/" + request.getPatientId();
         try {
@@ -70,31 +81,21 @@ public class appointmentService {
         appointment.setPatientId(UUID.fromString(request.getPatientId()));
 
         if (request.getTriageId() != null && !request.getTriageId().isEmpty()) {
-
-            // ══════════════════════════════════════════
-            // FLOW 1: AI TRIAGE
-            // Patient picked a slot from AI-suggested dept
-            // ══════════════════════════════════════════
-
             appointmentSlot slot = slotRepository.findById(UUID.fromString(request.getSlotId()))
                     .orElseThrow(() -> new RuntimeException("Slot not found: " + request.getSlotId()));
 
-            // Guard: slot might have been taken by someone else
             if (!"AVAILABLE".equals(slot.getStatus())) {
                 throw new RuntimeException("This slot is no longer available. Please select another.");
             }
 
-            // Lock the slot immediately
             slot.setStatus("BOOKED");
             slotRepository.save(slot);
 
-            // Fill appointment from slot data
             appointment.setDoctorName(slot.getDoctorName());
             appointment.setAppointmentTime(slot.getSlotTime());
             appointment.setDepartment(slot.getDepartment());
             appointment.setSlotId(slot.getId());
             appointment.setStatus("PENDING_REVIEW");
-            // No Kafka here - email only after staff approves
             appointment.setTriageId(request.getTriageId());
 
             if (request.getTriageId() != null && !request.getTriageId().isEmpty()) {
@@ -121,12 +122,6 @@ public class appointmentService {
             log.info("AI triage booking saved as PENDING_REVIEW, slot: {}", slot.getId());
 
         } else {
-
-            // ══════════════════════════════════════════
-            // FLOW 2: MANUAL / DIRECT BOOKING
-            // Patient entered doctor + time manually
-            // ══════════════════════════════════════════
-
             if (request.getDoctorName() == null || request.getDoctorName().isEmpty()) {
                 throw new IllegalArgumentException("Doctor name is required for direct booking.");
             }
@@ -151,22 +146,23 @@ public class appointmentService {
         return appointmentMapper.toDTO(saved);
     }
 
-    // ─────────────────────────────────────────────────────────
-    // STAFF: Get all PENDING_REVIEW appointments
-    // GET /appointments/pending
-    // ─────────────────────────────────────────────────────────
     public List<appointmentResponse> getPendingAppointments() {
         return appointmentRepository.findByStatus("PENDING_REVIEW")
                 .stream()
+                .sorted(Comparator.comparingInt(a -> urgencyOrder(a.getUrgencyLevel())))
                 .map(appointmentMapper::toDTO)
                 .toList();
     }
 
-    // ─────────────────────────────────────────────────────────
-    // STAFF: Approve appointment as-is
-    // Kafka fires → notification-service emails patient
-    // PUT /appointments/{id}/approve
-    // ─────────────────────────────────────────────────────────
+    public appointmentResponse markUrgentCallDone(UUID appointmentId) {
+        appointment apt = appointmentRepository.findById(appointmentId)
+                .orElseThrow(() -> new RuntimeException("Appointment not found: " + appointmentId));
+        apt.setUrgentCallDone(true);
+        appointment saved = appointmentRepository.save(apt);
+        log.info("Urgent call marked done for appointment: {}", appointmentId);
+        return appointmentMapper.toDTO(saved);
+    }
+
     public appointmentResponse approveAppointment(UUID appointmentId) {
         appointment apt = appointmentRepository.findById(appointmentId)
                 .orElseThrow(() -> new RuntimeException("Appointment not found: " + appointmentId));
@@ -208,10 +204,6 @@ public class appointmentService {
         return appointmentMapper.toDTO(saved);
     }
 
-    // ─────────────────────────────────────────────────────────
-    // Sends Kafka event → notification-service emails patient
-    // Only called after APPROVED status
-    // ─────────────────────────────────────────────────────────
     private void sendKafkaEvent(appointment appointment) {
         String patientEmail = getPatientEmail(appointment.getPatientId().toString());
         AppointmentEvent event = AppointmentEvent.newBuilder()
@@ -249,22 +241,4 @@ public class appointmentService {
             log.error("Error sending rejection Kafka event: {}", ex.getMessage());
         }
     }
-
-
-//        appointment appointment = appointmentRepository.save(appointmentMapper.toModel(request));
-//        AppointmentEvent event= AppointmentEvent.newBuilder()
-//                .setAppointmentId(appointment.getId().toString())
-//                .setPatientId(appointment.getPatientId().toString())
-//                .setDoctorName(appointment.getDoctorName())
-//                .setAppointmentTime(appointment.getAppointmentTime().toString())
-//                .build();
-//        try{
-//            kafkaTemplate.send("appointment",event.toByteArray());
-//            log.info("Sent BYTES for appointment: {}",appointment.getId());
-//        }
-//        catch (Exception ex){
-//            log.error("error sending patient event: {}",event);
-//        }
-//        return appointmentMapper.toDTO(appointment);
-//    }
 }

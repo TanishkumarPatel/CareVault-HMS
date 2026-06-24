@@ -3,6 +3,6 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "patientId": "4e97e879-3c4d-4184-b996-e5c90390a06f",
+  "patientId": "223e4567-e89b-12d3-a456-426614174014",
   "symptoms": "I have sharp chest pain radiating to my left arm and I feel short of breath"
 }

@@ -39,7 +39,6 @@ public class patientController {
 
     @GetMapping("/{id}")
     public ResponseEntity<PatientResponseDTO> getPatientById(@PathVariable String id) {
-        // You need to ensure your PatientService has a 'getPatientById' method too
         PatientResponseDTO patient = patient_service.getPatientById(id);
         return ResponseEntity.ok(patient);
     }

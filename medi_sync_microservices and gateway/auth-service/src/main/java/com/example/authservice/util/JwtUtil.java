@@ -2,6 +2,7 @@ package com.example.authservice.util;
 
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,5 +56,15 @@ public class JwtUtil {
 
             throw new JwtException("Invalid JWT token");
         }
+    }
+    public String extractRole(String token) {
+
+        Claims claims = Jwts.parser()
+                .verifyWith((SecretKey) secretKey)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+
+        return claims.get("role", String.class);
     }
 }

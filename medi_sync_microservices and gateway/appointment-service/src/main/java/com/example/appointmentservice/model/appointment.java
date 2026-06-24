@@ -29,6 +29,15 @@ public class appointment {
     private String rejectionReason;
     private String recommendedDepartment;
     private String recommendedDoctor;
+    private boolean urgentCallDone = false;
+
+    public boolean isUrgentCallDone() {
+        return urgentCallDone;
+    }
+
+    public void setUrgentCallDone(boolean urgentCallDone) {
+        this.urgentCallDone = urgentCallDone;
+    }
 
     public String getRejectionReason() {
         return rejectionReason;

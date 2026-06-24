@@ -11,25 +11,49 @@ spring:
         - id: auth-service-route
           uri: lb://AUTH-SERVICE
           predicates:
-              - Path=/api/auth/**
+            - Path=/api/auth/**
           filters:
             - StripPrefix=1
 
-        - id: patient-service-route
+        - id: patient-self-route
+          uri: lb://PATIENT-SERVICE
+          predicates:
+            - Path=/api/patients/{id}
+            - Method=GET
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+            - RoleValidation=PATIENT,DOCTOR,ADMIN
+
+        - id: patient-admin-route
           uri: lb://PATIENT-SERVICE
           predicates:
             - Path=/api/patients/**
+            - Method=GET,POST,PUT,DELETE
           filters:
             - StripPrefix=1
             - JwtValidation
+            - RoleValidation=ADMIN
 
-        - id: appointment-service-route
+        - id: appointment-patient-route
+          uri: lb://APPOINTMENT-SERVICE
+          predicates:
+            - Path=/api/appointments/slots,/api/appointments
+            - Method=GET,POST
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+            - RoleValidation=PATIENT
+
+        - id: appointment-doctor-route
           uri: lb://APPOINTMENT-SERVICE
           predicates:
             - Path=/api/appointments/**
+            - Method=GET,PUT
           filters:
             - StripPrefix=1
             - JwtValidation
+            - RoleValidation=DOCTOR,ADMIN
 
         - id: analytics-service-route
           uri: lb://ANALYTICS-SERVICE
@@ -38,14 +62,37 @@ spring:
           filters:
             - StripPrefix=1
             - JwtValidation
+            - RoleValidation=ADMIN
 
-        - id: ai-service-route
+        - id: ai-analyze-route
           uri: lb://AI-SERVICE
           predicates:
-            - Path=/api/ai/**
+            - Path=/api/ai/triage/analyze
+            - Method=POST
           filters:
             - StripPrefix=1
             - JwtValidation
+            - RoleValidation=PATIENT,ADMIN
+
+        - id: ai-get-triage-route
+          uri: lb://AI-SERVICE
+          predicates:
+            - Path=/api/ai/triage/{triageId}
+            - Method=GET
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+            - RoleValidation=PATIENT,DOCTOR,ADMIN
+
+        - id: ai-update-status-route
+          uri: lb://AI-SERVICE
+          predicates:
+            - Path=/api/ai/triage/{triageId}/status
+            - Method=PUT
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+            - RoleValidation=DOCTOR,ADMIN
 
 auth:
   service:

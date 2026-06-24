@@ -5,9 +5,9 @@ spring:
   application:
     name: patient-service
   datasource:
-    url: jdbc:postgresql://services-db:5432/db
-    username: admin_user
-    password: password
+    url: jdbc:postgresql://services-db:5432/patient_db
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     hikari:
       max-lifetime: 1800000
       connection-timeout: 30000

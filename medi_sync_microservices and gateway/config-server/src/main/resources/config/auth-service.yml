@@ -5,8 +5,8 @@ spring:
     name: auth-service
   datasource:
     url: jdbc:postgresql://auth-service-db:5432/db
-    username: admin_user
-    password: password
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     hikari:
       max-lifetime: 1800000
       connection-timeout: 30000
@@ -20,5 +20,5 @@ spring:
       mode: always
 
 jwt:
-  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
-  expiration: 86400000
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION} 
