@@ -4,6 +4,7 @@ package com.example.authservice.controller;
 import com.example.authservice.dto.LoginRequestDTO;
 import com.example.authservice.dto.LoginResponseDTO;
 import com.example.authservice.service.AuthService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import com.example.authservice.util.JwtUtil;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class AuthController {
     }
 //    @Operation(summary = "Generate token on user login")
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginRequestDTO) {
+    public ResponseEntity<LoginResponseDTO> login(@Valid @RequestBody LoginRequestDTO loginRequestDTO) {
         Optional<String> tokenOptional = authService.authenticate(loginRequestDTO);
         if(tokenOptional.isEmpty())
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

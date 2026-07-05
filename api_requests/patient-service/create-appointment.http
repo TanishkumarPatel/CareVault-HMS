@@ -1,8 +1,0 @@
-POST http://localhost:4004/api/appointments
-Content-Type: application/json
-
-{
-  "patientId": "833c7880-f5e1-406e-a793-b2b343b5a3e5",
-  "doctorName": "Dr. Gupta",
-  "appointmentTime": "2026-01-20T10:00:00"
-}

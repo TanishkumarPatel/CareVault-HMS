@@ -5,11 +5,22 @@ import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFac
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Component
 public class RoleValidationGatewayFilterFactory extends AbstractGatewayFilterFactory<RoleValidationGatewayFilterFactory.Config> {
+
+    public static class Config {
+        private List<String> allowedRoles;
+
+        public List<String> getAllowedRoles() {
+            return allowedRoles;
+        }
+
+        public void setAllowedRoles(List<String> allowedRoles) {
+            this.allowedRoles = allowedRoles;
+        }
+    }
 
     public RoleValidationGatewayFilterFactory() {
         super(Config.class);
@@ -28,18 +39,6 @@ public class RoleValidationGatewayFilterFactory extends AbstractGatewayFilterFac
 
             return chain.filter(exchange);
         };
-    }
-
-    public static class Config {
-        private List<String> allowedRoles;
-
-        public List<String> getAllowedRoles() {
-            return allowedRoles;
-        }
-
-        public void setAllowedRoles(List<String> allowedRoles) {
-            this.allowedRoles = allowedRoles;
-        }
     }
 
     @Override

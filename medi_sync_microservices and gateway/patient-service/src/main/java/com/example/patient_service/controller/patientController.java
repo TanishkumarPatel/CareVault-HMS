@@ -3,12 +3,10 @@ package com.example.patient_service.controller;
 import com.example.patient_service.dto.PatientRequestDTO;
 import com.example.patient_service.dto.PatientResponseDTO;
 import com.example.patient_service.dto.validators.CreatePatientValidationGroup;
-import com.example.patient_service.model.patient;
 import com.example.patient_service.repository.patient_repository;
 import com.example.patient_service.service.patient_service;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
 import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -19,7 +17,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/patients")
-
 @Tag(name="patient", description="API for managing patients")//for swagger UI
 public class patientController {
     private final patient_service patient_service;

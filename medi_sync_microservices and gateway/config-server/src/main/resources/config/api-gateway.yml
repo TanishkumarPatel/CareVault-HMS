@@ -6,7 +6,7 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false
       routes:
         - id: auth-service-route
           uri: lb://AUTH-SERVICE
@@ -93,6 +93,16 @@ spring:
             - StripPrefix=1
             - JwtValidation
             - RoleValidation=DOCTOR,ADMIN
+
+        - id: ai-chat-route
+          uri: lb://AI-SERVICE
+          predicates:
+            - Path=/api/ai/triage/chat
+            - Method=POST
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+            - RoleValidation=PATIENT
 
 auth:
   service:

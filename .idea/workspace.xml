@@ -5,49 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca966e73-68ba-4651-985e-74822a59d1cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8307f99c-1449-4fa4-8ff1-ac73c470ace1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe31e994-404f-405f-88fb-d833381d4baf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T110542.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T110701.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T110732.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T110903.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T110944.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T111844.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T111912.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T112048.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T112552.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T112630.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T112928.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T113021.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T115625.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T115745.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T121004.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T121654.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T163109.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T163157.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2026-06-09T163215.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_requests/ai-service/triage.http" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests/ai-service/triage.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/java/com/example/apigateway/filter/JwtValidationGatewayFilterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/java/com/example/apigateway/filter/JwtValidationGatewayFilterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/controller/appointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/controller/appointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/dto/appointmentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/dto/appointmentResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/mapper/appointmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/mapper/appointmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/model/appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/model/appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/AiServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/AiServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/controller/triageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/controller/triageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/service/geminiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/service/geminiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/service/triageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/ai-service/src/main/java/com/example/aiservice/service/triageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/java/com/example/apigateway/filter/RoleValidationGatewayFilterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/api-gateway/src/main/java/com/example/apigateway/filter/RoleValidationGatewayFilterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/dto/appointmentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/dto/appointmentRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/exception/globalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/exception/globalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/service/appointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/appointment-service/src/main/java/com/example/appointmentservice/service/appointmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/auth-service/src/main/java/com/example/authservice/util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/ai-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/ai-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/analytics-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/analytics-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/api-gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/appointment-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/appointment-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/auth-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/auth-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/notification-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/notification-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/patient-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/config-server/src/main/resources/config/patient-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/notification-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/controller/patientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/controller/patientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/exception/EmailAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/exception/EmailAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/exception/globalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/exception/globalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/kafka/kafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/kafka/kafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/service/patient_service.java" beforeDir="false" afterPath="$PROJECT_DIR$/medi_sync_microservices and gateway/patient-service/src/main/java/com/example/patient_service/service/patient_service.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +34,9 @@
       <list>
         <option value="Exception" />
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Dockerfile" />
         <option value="HTTP Request" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -208,7 +183,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.api-gateway">
+  <component name="RunManager" selected="Docker.kafka">
     <configuration name="direct-booking | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api_requests/manual-appointment/direct-booking.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -720,10 +695,23 @@
       <workItem from="1781700751674" duration="1985000" />
       <workItem from="1781702758564" duration="307000" />
       <workItem from="1782303432403" duration="7000" />
+      <workItem from="1782319306853" duration="415000" />
+      <workItem from="1782593995778" duration="72251000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

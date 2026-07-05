@@ -11,6 +11,7 @@ import com.example.appointmentservice.model.appointmentSlot;
 import com.example.appointmentservice.model.appointment;
 import com.example.appointmentservice.repository.appointmentRepository;
 import com.example.appointmentservice.repository.slotRepository;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -69,16 +70,28 @@ public class appointmentService {
         };
     }
 
+    @Transactional
     public appointmentResponse bookAppointment(appointmentRequest request) {
-        String url = "http://patient-service/patients/" + request.getPatientId();
+        String patientUrl = "http://patient-service/patients/" + request.getPatientId();
+        Map patientResponse;
         try {
-            restTemplate.getForEntity(url, Object.class);
-        } catch (Exception e) {
+            patientResponse = restTemplate.getForObject(patientUrl, Map.class);
+            if (patientResponse == null) {
+                throw new Patientnotfoundexception("Patient ID " + request.getPatientId() + " not found.");
+            }
+        }
+        catch (Exception e) {
             throw new Patientnotfoundexception("Patient ID " + request.getPatientId() + " not found.");
         }
+        String patientEmail = patientResponse.get("email") != null ? patientResponse.get("email").toString() : "";
+        String patientName = patientResponse.get("name") != null ? patientResponse.get("name").toString() : "";
+        String patientPhone = patientResponse.get("phone") != null ? patientResponse.get("phone").toString() : "";
 
         appointment appointment = new appointment();
         appointment.setPatientId(UUID.fromString(request.getPatientId()));
+        appointment.setPatientEmail(patientEmail);
+        appointment.setPatientName(patientName);
+        appointment.setPatientPhone(patientPhone);
 
         if (request.getTriageId() != null && !request.getTriageId().isEmpty()) {
             appointmentSlot slot = slotRepository.findById(UUID.fromString(request.getSlotId()))
@@ -122,20 +135,24 @@ public class appointmentService {
             log.info("AI triage booking saved as PENDING_REVIEW, slot: {}", slot.getId());
 
         } else {
-            if (request.getDoctorName() == null || request.getDoctorName().isEmpty()) {
-                throw new IllegalArgumentException("Doctor name is required for direct booking.");
-            }
-            if (request.getAppointmentTime() == null || request.getAppointmentTime().isEmpty()) {
-                throw new IllegalArgumentException("Appointment time is required for direct booking.");
+            appointmentSlot slot = slotRepository.findById(UUID.fromString(request.getSlotId()))
+                    .orElseThrow(() -> new RuntimeException("Slot not found: " + request.getSlotId()));
+
+            if (!"AVAILABLE".equals(slot.getStatus())) {
+                throw new RuntimeException("This slot is no longer available. Please select another.");
             }
 
-            appointment.setDoctorName(request.getDoctorName());
-            appointment.setAppointmentTime(LocalDateTime.parse(request.getAppointmentTime()));
-            appointment.setDepartment(request.getDepartment());
-            appointment.setSlotId(UUID.fromString(request.getSlotId()));
+            // mark slot as BOOKED
+            slot.setStatus("BOOKED");
+            slotRepository.save(slot);
+
+            // take details from slot directly — same as triage path
+            appointment.setDoctorName(slot.getDoctorName());
+            appointment.setAppointmentTime(slot.getSlotTime());
+            appointment.setDepartment(slot.getDepartment());
+            appointment.setSlotId(slot.getId());
             appointment.setStatus("APPROVED");
 
-            // Save first so ID is generated, then send Kafka
             appointment saved = appointmentRepository.save(appointment);
             sendKafkaEvent(saved);
             log.info("Direct booking APPROVED, notification sent: {}", saved.getId());
@@ -205,13 +222,12 @@ public class appointmentService {
     }
 
     private void sendKafkaEvent(appointment appointment) {
-        String patientEmail = getPatientEmail(appointment.getPatientId().toString());
         AppointmentEvent event = AppointmentEvent.newBuilder()
                 .setAppointmentId(appointment.getId().toString())
                 .setPatientId(appointment.getPatientId().toString())
                 .setDoctorName(appointment.getDoctorName())
                 .setAppointmentTime(appointment.getAppointmentTime().toString())
-                .setPatientEmail(patientEmail != null ? patientEmail : "")
+                .setPatientEmail(appointment.getPatientEmail() != null ? appointment.getPatientEmail() : "")
                 .setDepartment(appointment.getDepartment() != null ? appointment.getDepartment() : "")
                 .setEventType("APPROVED")
                 .build();
@@ -224,13 +240,12 @@ public class appointmentService {
     }
 
     private void sendKafkaRejectionEvent(appointment appointment) {
-        String patientEmail = getPatientEmail(appointment.getPatientId().toString());
         AppointmentEvent event = AppointmentEvent.newBuilder()
                 .setAppointmentId(appointment.getId().toString())
                 .setPatientId(appointment.getPatientId().toString())
                 .setDoctorName(appointment.getRecommendedDoctor() != null ? appointment.getRecommendedDoctor() : "")
                 .setAppointmentTime(appointment.getAppointmentTime().toString())
-                .setPatientEmail(patientEmail != null ? patientEmail : "")
+                .setPatientEmail(appointment.getPatientEmail() != null ? appointment.getPatientEmail() : "")
                 .setDepartment(appointment.getRecommendedDepartment() != null ? appointment.getRecommendedDepartment() : "")
                 .setEventType("REJECTED")
                 .build();

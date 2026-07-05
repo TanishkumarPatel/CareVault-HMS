@@ -1,6 +1,5 @@
 package com.example.patient_service.exception;
 
-import ch.qos.logback.classic.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

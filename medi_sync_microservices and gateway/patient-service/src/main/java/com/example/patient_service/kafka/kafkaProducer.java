@@ -1,7 +1,6 @@
 package com.example.patient_service.kafka;
 
 import com.example.patient_service.model.patient;
-import org.apache.kafka.clients.producer.KafkaProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;

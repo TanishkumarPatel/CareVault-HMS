@@ -26,6 +26,9 @@ public class appointmentMapper {
         response.setRecommendedDepartment(appointment.getRecommendedDepartment());
         response.setRecommendedDoctor(appointment.getRecommendedDoctor());
         response.setUrgentCallDone(appointment.isUrgentCallDone());
+        response.setPatientName(appointment.getPatientName());       // NEW
+        response.setPatientEmail(appointment.getPatientEmail());     // NEW
+        response.setPatientPhone(appointment.getPatientPhone());
         return response;
     }
 

@@ -14,6 +14,8 @@ public class appointmentRequest {
     @NotNull(message = "Appointment time is required")
     private String appointmentTime;
     private String department;
+    private String triageId;
+    private String slotId;
 
     public String getDepartment() {
         return department;
@@ -22,9 +24,6 @@ public class appointmentRequest {
     public void setDepartment(String department) {
         this.department = department;
     }
-
-    private String triageId;
-    private String slotId;
 
     public String getTriageId() {
         return triageId;

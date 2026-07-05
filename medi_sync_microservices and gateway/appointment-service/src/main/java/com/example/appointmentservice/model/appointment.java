@@ -31,6 +31,34 @@ public class appointment {
     private String recommendedDoctor;
     private boolean urgentCallDone = false;
 
+    private String patientEmail;
+    private String patientName;
+    private String patientPhone;
+
+    public String getPatientEmail() {
+        return patientEmail;
+    }
+
+    public void setPatientEmail(String patientEmail) {
+        this.patientEmail = patientEmail;
+    }
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public String getPatientPhone() {
+        return patientPhone;
+    }
+
+    public void setPatientPhone(String patientPhone) {
+        this.patientPhone = patientPhone;
+    }
+
     public boolean isUrgentCallDone() {
         return urgentCallDone;
     }

@@ -1,6 +1,7 @@
 package com.example.aiservice.controller;
 
-import com.example.aiservice.dto.triageRequest;
+import com.example.aiservice.dto.chatRequest;
+import com.example.aiservice.dto.chatResponse;
 import com.example.aiservice.dto.triageResponse;
 import com.example.aiservice.service.triageService;
 import jakarta.validation.Valid;
@@ -19,11 +20,6 @@ public class triageController {
         this.service = service;
     }
 
-    @PostMapping("/analyze")
-    public ResponseEntity<triageResponse> analyze(@Valid @RequestBody triageRequest request) {
-        return ResponseEntity.ok(service.analyze(request));
-    }
-
     @PutMapping("/{triageId}/status")
     public ResponseEntity<Void> updateStatus(
             @PathVariable UUID triageId,
@@ -35,5 +31,10 @@ public class triageController {
     @GetMapping("/{triageId}")
     public ResponseEntity<triageResponse> getById(@PathVariable UUID triageId) {
         return ResponseEntity.ok(service.getById(triageId));
+    }
+
+    @PostMapping("/chat")
+    public ResponseEntity<chatResponse> chat(@Valid @RequestBody chatRequest request) {
+        return ResponseEntity.ok(service.chat(request));
     }
 }
