@@ -1,163 +1,179 @@
-[//]: # (# MediSync - Microservices Healthcare Platform 🏥)
-
-[//]: # ()
-[//]: # (MediSync is a robust healthcare management application built using a **Microservices Architecture** with **Spring Boot**. The system is designed to handle patient data, appointment scheduling, and automated notifications using a distributed, event-driven approach.)
-
-[//]: # ()
-[//]: # (## 🏗 Architecture Overview)
-
-[//]: # ()
-[//]: # (The backend is composed of several independent microservices communicating via REST and asynchronous messaging:)
-
-[//]: # ()
-[//]: # (| Service | Description | Port |)
-
-[//]: # (| :--- | :--- | :--- |)
-
-[//]: # (| **Discovery Server** | Service Registry using Netflix Eureka. | `8761` |)
-
-[//]: # (| **Config Server** | Centralized configuration management for all services. | `8888` |)
-
-[//]: # (| **API Gateway** | Entry point for the system; handles routing. | `8080` |)
-
-[//]: # (| **Patient Service** | Manages patient profiles and records &#40;PostgreSQL&#41;. | *&#40;Dynamic&#41;* |)
-
-[//]: # (| **Appointment Service** | Handles scheduling and doctor-patient bookings. | *&#40;Dynamic&#41;* |)
-
-[//]: # (| **Notification Service** | Sends automated alerts/emails via Kafka events. | *&#40;Dynamic&#41;* |)
-
-[//]: # (| **Analytics Service** | Processes system data for healthcare insights. | *&#40;Dynamic&#41;* |)
-
-[//]: # ()
-[//]: # (## 🛠 Tech Stack)
-
-[//]: # ()
-[//]: # (* **Language:** Java 17 / 21)
-
-[//]: # (* **Framework:** Spring Boot 3.4.1, Spring Cloud 2024.0.0)
-
-[//]: # (* **Service Discovery:** Netflix Eureka)
-
-[//]: # (* **API Gateway:** Spring Cloud Gateway)
-
-[//]: # (* **Databases:** PostgreSQL &#40;Production&#41;, H2 &#40;Development/Testing&#41;)
-
-[//]: # (* **Messaging:** Apache Kafka &#40;Event-Driven Communication&#41;)
-
-[//]: # (* **Serialization:** Google Protobuf)
-
-[//]: # (* **Documentation:** SpringDoc OpenAPI &#40;Swagger UI&#41;)
-
-[//]: # ()
-[//]: # (## ⚙️ Prerequisites)
-
-[//]: # ()
-[//]: # (Before running the project, ensure you have the following installed:)
-
-[//]: # ()
-[//]: # (1.  **Java JDK 17** &#40;Minimum required for most services&#41;)
-
-[//]: # (2.  **PostgreSQL** &#40;Running locally or via Docker&#41;)
-
-[//]: # (3.  **Apache Kafka** &#40;Broker and Zookeeper&#41;)
-
-[//]: # (4.  **Maven** &#40;For building dependencies&#41;)
-
-[//]: # ()
-[//]: # (## 🚀 Getting Started)
-
-[//]: # ()
-[//]: # (Follow these steps to run the MediSync services locally.)
-
-[//]: # ()
-[//]: # (### 1. Infrastructure Setup)
-
-[//]: # (Ensure your data and messaging layers are active:)
-
-[//]: # (* Start **PostgreSQL** &#40;Create databases for `patient_db` and `appointment_db`&#41;.)
-
-[//]: # (* Start **Kafka** &#40;Ensure the broker is reachable on `localhost:9092`&#41;.)
-
-[//]: # ()
-[//]: # (### 2. Run Services)
-
-[//]: # (Start the microservices in the exact order below to ensure the configuration and discovery layers are ready:)
-
-[//]: # ()
-[//]: # (1.  **Discovery Server**)
-
-[//]: # (    ```bash)
-
-[//]: # (    cd "medi_sync_microservices and gateway/discovery-server")
-
-[//]: # (    ./mvnw spring-boot:run)
-
-[//]: # (    ```)
-
-[//]: # (2.  **Config Server**)
-
-[//]: # (    ```bash)
-
-[//]: # (    cd "medi_sync_microservices and gateway/config-server")
-
-[//]: # (    ./mvnw spring-boot:run)
-
-[//]: # (    ```)
-
-[//]: # (3.  **Core Microservices** &#40;Open separate terminals&#41;)
-
-[//]: # (    * **Patient Service**: `cd "medi_sync_microservices and gateway/patient-service" && ./mvnw spring-boot:run`)
-
-[//]: # (    * **Appointment Service**: `cd "medi_sync_microservices and gateway/appointment-service" && ./mvnw spring-boot:run`)
-
-[//]: # (    * **Notification Service**: `cd "medi_sync_microservices and gateway/notification-service" && ./mvnw spring-boot:run`)
-
-[//]: # (4.  **API Gateway**)
-
-[//]: # (    ```bash)
-
-[//]: # (    cd "medi_sync_microservices and gateway/api-gateway")
-
-[//]: # (    ./mvnw spring-boot:run)
-
-[//]: # (    ```)
-
-[//]: # ()
-[//]: # (## 🧠 Key Features)
-
-[//]: # ()
-[//]: # (* **Centralized Config**: All service-specific properties are managed via the `config-server`.)
-
-[//]: # (* **Event-Driven Notifications**: Uses **Apache Kafka** to trigger notifications immediately when appointments are scheduled.)
-
-[//]: # (* **High Performance**: Utilizes **Google Protobuf** for efficient data serialization across service boundaries.)
-
-[//]: # (* **Service Discovery**: Automated service registration and heartbeats using Eureka.)
-
-[//]: # (* **API Documentation**: Integrated Swagger UI for testing endpoints.)
-
-[//]: # ()
-[//]: # (## 📂 Project Structure)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (├── api_requests             # .http files for testing endpoints)
-
-[//]: # (├── medi_sync_microservices and gateway)
-
-[//]: # (│   ├── analytics-service    # Data processing & Kafka listener)
-
-[//]: # (│   ├── api-gateway          # Central entry point & routing)
-
-[//]: # (│   ├── appointment-service  # Booking & schedule management)
-
-[//]: # (│   ├── config-server        # Externalized YAML configurations)
-
-[//]: # (│   ├── discovery-server     # Eureka service registry)
-
-[//]: # (│   ├── notification-service # Kafka consumer for Email/SMS alerts)
-
-[//]: # (│   └── patient-service      # CRUD for patient records)
-
-[//]: # (└── README.md)
+# CareVault HMS 🏥
+
+A **Hospital Management System** built using **Microservices Architecture** with **Spring Boot**. This project demonstrates a scalable, distributed backend system featuring AI-powered medical triage, role-based access control, event-driven notifications, and centralized configuration management.
+
+---
+
+## 🏗 Architecture Overview
+
+The system is composed of 7 independent microservices communicating through REST and Kafka:
+
+| Service | Description | Port |
+| :--- | :--- | :--- |
+| **Discovery Server** | Service registry using Netflix Eureka | `8761` |
+| **Config Server** | Centralized configuration for all services | `8888` |
+| **API Gateway** | Single entry point — handles routing, JWT validation, and role-based access control | `4004` |
+| **Auth Service** | User authentication — login, JWT generation with role claim | Dynamic |
+| **Patient Service** | Patient registration and profile management | Dynamic |
+| **Appointment Service** | Slot management, appointment booking, approval/rejection workflow | Dynamic |
+| **AI Service** | Conversational medical triage using Google Gemini AI | Dynamic |
+| **Notification Service** | Event-driven email notifications via Kafka | Dynamic |
+| **Analytics Service** | Consumes Kafka events for hospital analytics | Dynamic |
+
+---
+
+## 🧠 Key Features
+
+- **Conversational AI Triage** — Multi-turn chatbot using Google Gemini that collects symptoms through follow-up questions and recommends the appropriate department and urgency level
+- **Role-Based Access Control** — JWT-based authentication with PATIENT, DOCTOR, and ADMIN roles enforced at the API Gateway level
+- **Appointment Management** — Full booking workflow with slot availability, urgency-based pending queue sorting, and staff approval/rejection flow
+- **Event-Driven Notifications** — Kafka-based async email notifications to patients on appointment approval or rejection
+- **Microservices Data Isolation** — Each service owns its own PostgreSQL database, communicating only via REST or Kafka
+- **Centralized Security** — JWT validated directly at the gateway, role and identity headers forwarded to downstream services
+
+---
+
+## 🛠 Tech Stack
+
+| Category | Technology |
+| :--- | :--- |
+| **Language** | Java 21 |
+| **Framework** | Spring Boot 3.4, Spring Cloud 2024 |
+| **Service Discovery** | Netflix Eureka |
+| **API Gateway** | Spring Cloud Gateway |
+| **Database** | PostgreSQL (separate DB per service) |
+| **Messaging** | Apache Kafka |
+| **Serialization** | Protocol Buffers (Protobuf) |
+| **AI Integration** | Google Gemini API (`gemini-2.5-flash`) |
+| **Security** | JWT (JJWT library), BCrypt password hashing |
+| **Containerization** | Docker |
+| **Configuration** | Spring Cloud Config Server (native mode) |
+
+---
+
+## ⚙️ Prerequisites
+
+- **Java 21**
+- **Docker Desktop**
+- **Apache Kafka** (Docker container)
+- **PostgreSQL** (Docker container)
+- **Google Gemini API Key**
+- **Gmail App Password** (for email notifications)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Environment Setup
+
+Create a `.env` file in the project root with:
+
+```env
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_db_password
+JWT_SECRET=your_jwt_secret_base64
+JWT_EXPIRATION=86400000
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+MAIL_USERNAME=your_gmail@gmail.com
+MAIL_PASSWORD=your_gmail_app_password
+```
+
+### 2. Start Services
+
+Start in the exact order below to ensure dependencies are available:
+
+**1. Databases**
+```
+Start auth-service-db and services-db Docker containers
+```
+
+**2. Kafka**
+```
+Start kafka Docker container
+```
+
+**3. Discovery Server**
+```bash
+cd discovery-server
+./mvnw spring-boot:run
+```
+
+**4. Config Server**
+```bash
+cd config-server
+./mvnw spring-boot:run
+```
+
+**5. Core Services** (open separate terminal for each)
+```bash
+cd auth-service && ./mvnw spring-boot:run
+```
+```bash
+cd patient-service && ./mvnw spring-boot:run
+```
+```bash
+cd appointment-service && ./mvnw spring-boot:run
+```
+```bash
+cd ai-service && ./mvnw spring-boot:run
+```
+```bash
+cd notification-service && ./mvnw spring-boot:run
+```
+```bash
+cd analytics-service && ./mvnw spring-boot:run
+```
+
+**6. API Gateway** (start last)
+```bash
+cd api-gateway
+./mvnw spring-boot:run
+```
+
+### 3. Verify
+
+Open Eureka Dashboard at `http://localhost:8761` — all services should show `UP` status.
+
+All API requests go through: `http://localhost:4004`
+
+---
+
+## 📂 Project Structure
+
+```
+medi_sync_microservices and gateway/
+├── ai-service/              # Gemini AI triage chatbot
+├── analytics-service/       # Kafka event consumer for analytics
+├── api-gateway/             # Spring Cloud Gateway + JWT/Role filters
+├── appointment-service/     # Appointment + slot management
+├── auth-service/            # Authentication + JWT generation
+├── config-server/           # Centralized configuration
+├── discovery-server/        # Netflix Eureka service registry
+├── notification-service/    # Kafka consumer + email sender
+└── patient-service/         # Patient profile management
+```
+
+---
+
+## 🔒 Security Design
+
+- **JWT validation** at gateway level — individual services trust gateway headers
+- **Role-based routing** — each route restricted to specific roles via `RoleValidationGatewayFilterFactory`
+- **BCrypt** password hashing in auth-service
+- **Prompt injection detection** on every AI chat turn
+- **Medical input validation** via dedicated Gemini YES/NO call before main chat
+
+---
+
+## 🚧 Planned Improvements
+
+- Gateway-direct JWT validation — removing per-request auth-service dependency
+- Server-side session ID generation for chat security
+- Docker Compose for simplified orchestration
+
+---
+
+## 👨‍💻 Author
+
+**Tanishkumar Patel**
