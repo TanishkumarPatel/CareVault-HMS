@@ -171,6 +171,7 @@ medi_sync_microservices and gateway/
 - Gateway-direct JWT validation — removing per-request auth-service dependency
 - Server-side session ID generation for chat security
 - Docker Compose for simplified orchestration
+- Migrate selected microservices to MongoDB for flexible schema management and document-based storage.
 
 ---
 
